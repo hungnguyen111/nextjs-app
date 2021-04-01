@@ -1,0 +1,29 @@
+.header {
+    position: fixed;
+    z-index: 1000;
+    color: white;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    background: #d70018;
+    width: 100%;
+    top: 0;
+    left: 0;
+    &-content {
+        display: flex;
+        .box-main__box-about {
+            display: flex;
+            align-items: center;
+            .box-about {
+                display: flex;
+                align-items: center;
+                p {
+                    margin: 0;
+                }
+            }
+        }
+        .input-group {
+            display: flex;
+        }
+    }
+}

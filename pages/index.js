@@ -1,65 +1,580 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Header from '../component/header';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { 
+    faAngleRight, 
+    faLaptop,
+    faMobileAlt,
+    faTabletAlt,
+    faMusic,
+    faClock,
+    faHome,
+    faCodeBranch,
+    faMoneyBillWave,
+    faCircleNotch,
+    faSimCard,
+    faJournalWhills,
+    faTag
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <>
+      <Header />
+      <div className="header-overlay"></div>
+      <div className="container box-sliding">
+        <div className="row">
+          <div className="box-sliding__left pc">
+             <ul className="box-list-menu">
+                <li className="menu-item">
+                     <a>
+                        <FontAwesomeIcon icon={faMobileAlt}></FontAwesomeIcon>
+                        <span>Điện thoại</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                     </a>
+                     <ul className="box-list-menu box-menu__child">
+                        <li className="menu-item">
+                            <a>
+                                <span>Apple</span>
+                                <span className="arrow-right">
+                                    <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                                </span>
+                            </a>
+                            <ul className="box-list-menu box-menu__child">
+                                <li className="menu-item">
+                                    <a>
+                                        <span>iPhone 12 Series</span>
+                                    </a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>iPhone 11 Series</span></a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>iPhone X | XR</span></a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>iPhone SE 2020</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Samsung</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Xiaomi</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>OPPO</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Nokia</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Realme</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Vsmart</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>ASUS</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Huawei</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Vivo</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>OnePlus</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Điện thoại phổ thông</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Tin đồn - Mới ra</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Pocophone</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a>
+                                <span>Hãng Khác</span>
+                                <span className="arrow-right">
+                                    <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                                </span>
+                            </a>
+                            <ul className="box-list-menu box-menu__child">
+                                <li className="menu-item">
+                                    <a>
+                                        <span>BKAV Bphone</span>
+                                    </a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Sharp</span></a>
+                                </li>
+                            </ul>
+                         </li>
+                     </ul>
+                 </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faLaptop}></FontAwesomeIcon>
+                        <span>Laptop</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                    </a>
+                    <ul className="box-list-menu box-menu__child">
+                        <li className="menu-item">
+                            <a>
+                                <span>Mac</span>
+                                <span className="arrow-right">
+                                    <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                                </span>
+                            </a>
+                            <ul className="box-list-menu box-menu__child">
+                                <li className="menu-item">
+                                    <a>
+                                        <span>MacBook Air</span>
+                                    </a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>MacBook Pro</span></a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Mac mini</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>HP</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Dell</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Lenovo</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Microsoft Surface</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Asus</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Acer</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>LG</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Huawei</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>MSI</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Phụ kiện</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Màn hình</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Máy in</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Linh kiện Laptop</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Laptop Avita</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Máy tính để bàn</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faTabletAlt}></FontAwesomeIcon>
+                        <span>Tablet</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                    </a>
+                    <ul className="box-list-menu box-menu__child">
+                        <li className="menu-item">
+                            <a><span>iPad Pro</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>iPad 10.2</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>iPad Air</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>iPad mini</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Huawei</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Samsung</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faMusic}></FontAwesomeIcon>
+                        <span>Âm Thanh</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                    </a>
+                    <ul className="box-list-menu box-menu__child">
+                        <li className="menu-item">
+                            <a>
+                                <span>Loa</span>
+                                <span className="arrow-right">
+                                    <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                                </span>
+                            </a>
+                            <ul className="box-list-menu box-menu__child">
+                                <li className="menu-item">
+                                    <a>
+                                        <span>Loa vi tính</span>
+                                    </a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Loa Bluetooth</span></a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Loa kéo</span></a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Loa Tivi | Soundbar</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="menu-item">
+                            <a>
+                                <span>Tai nghe</span>
+                                <span className="arrow-right">
+                                    <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                                </span>
+                            </a>
+                            <ul className="box-list-menu box-menu__child">
+                                <li className="menu-item">
+                                    <a><span>Tai nghe không dây</span></a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Tai nghe Bluetooth</span></a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Tai nghe nhét tai</span></a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Tai nghe chụp tai</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faClock}></FontAwesomeIcon>
+                        <span>Đồng Hồ</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                    </a>
+                    <ul className="box-list-menu box-menu__child">
+                        <li className="menu-item">
+                            <a><span>Apple Watch</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Samsung</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Garmin</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Xiaomi</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Amazfit</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Huawei</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>OPPO</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Hãng khác</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Vòng tay thông minh</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Đồng hồ định vị trẻ em</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
+                        <span>Nhà thông minh</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                    </a>
+                    <ul className="box-list-menu box-menu__child">
+                        <li className="menu-item">
+                            <a><span>Khoá thông minh</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Máy hút bụi</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Máy lọc không khí</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Đèn thông minh</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Ổ cắm điện</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>TV Box</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>OPPO</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Cân sức khoẻ</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Máy chiếu</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Hàng cũ</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Wifi Mesh</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Modem Router</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Camera An Ninh</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faCodeBranch}></FontAwesomeIcon>
+                        <span>Phụ kiện</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                    </a>
+                    <ul className="box-list-menu box-menu__child">
+                        <li className="menu-item">
+                            <a><span>Phụ kiện Apple</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Dán điện thoại | Laptop</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Ốp lưng | Bao da | Ốp AirPods</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Dây đeo đồng hồ</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Balo | Túi xách</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Cáp sạc</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Pin dự phòng</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Thiết bị mạng</span></a>
+                        </li>
+                        
+                        <li className="menu-item">
+                            <a>
+                                <span>Camera</span>
+                                <span className="arrow-right">
+                                    <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                                </span>
+                            </a>
+                            <ul className="box-list-menu box-menu__child">
+                                <li className="menu-item">
+                                    <a>
+                                        <span>Camera hành trình</span>
+                                        <span className="arrow-right">
+                                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                                        </span>
+                                    </a>
+                                    <ul className="box-list-menu box-menu__child">
+                                        <li className="menu-item">
+                                            <a><span>Gopro</span></a>
+                                        </li>
+                                        <li className="menu-item">
+                                            <a><span>Vietmap</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Camera An Ninh</span></a>
+                                </li>
+                                <li className="menu-item">
+                                    <a><span>Gimbal</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Chuột | Bàn Phím</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Phụ kiện tiện ích</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Gaming Gear</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faMoneyBillWave}></FontAwesomeIcon>
+                        <span>Thu cũ</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                    </a>
+                    <ul className="box-list-menu box-menu__child">
+                        <p className="box-menu__child-title"><strong>ĐỐI TÁC THU MUA:</strong></p>
+                        <li className="menu-item">
+                            <a><span>CellphoneS</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>SKTel</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Compasia</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faCircleNotch}></FontAwesomeIcon>
+                        <span>Hàng cũ</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                    </a>
+                    <ul className="box-list-menu box-menu__child">
+                        <li className="menu-item">
+                            <a><span>iPhone</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>iPad</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Apple Watch</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Mac</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Samsung</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Huawei</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Xiaomi</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>OPPO</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Realme</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>ASUS</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Nokia</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Vsmart</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Laptop</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faSimCard}></FontAwesomeIcon>
+                        <span>Sim thẻ</span>
+                        <span className="arrow-right">
+                            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+                        </span>
+                    </a>
+                    <ul className="box-list-menu box-menu__child">
+                        <li className="menu-item">
+                            <a><span>Thẻ cào</span></a>
+                        </li>
+                        <li className="menu-item">
+                            <a><span>Dịch vụ sim</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faJournalWhills}></FontAwesomeIcon>
+                        <span>Tin công Nghệ</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li className="menu-item">
+                    <a>
+                        <FontAwesomeIcon icon={faTag}></FontAwesomeIcon>
+                        <span>Khuyến mại</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+             </ul>
+          </div>
+          <div className="box-sliding__center">
+              center
+          </div>
+          <div className="box-sliding__right pc">
+            <div className="right__box-img">
+              <a><img src="./img/640x278_Right_banner-sss.png" /></a>
+            </div>
+            <div className="right__box-img">
+              <a><img src="./img/640x278_-_Rightbanner_iPhone12_2_.png" /></a>
+            </div>
+            <div className="right__box-img">
+              <a><img src="./img/Sliding-690x300.png" /></a>
+            </div>
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      </div>
+      <div className="container banner">
+          <a>
+              <img className="pc" src="./img/MFF-1200x75_3_.png" />
+              <img className="sp" src="./img/MFF-800x150_3_.png" />
+          </a>
+      </div>
+    </>
   )
 }
