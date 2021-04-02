@@ -13,14 +13,44 @@ import {
     faCircleNotch,
     faSimCard,
     faJournalWhills,
-    faTag
+    faTag,
+    faAngleDown,
+    faMapMarkerAlt
 } from "@fortawesome/free-solid-svg-icons";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { 
+    Autoplay,
+    Pagination,
+    Navigation
+} from 'swiper';
+SwiperCore.use([Autoplay, Pagination, Navigation]);
+
+function customPagination () {
+    if (process.browser) {
+        console.log(document);
+    }
+}
+customPagination();
 
 export default function Home() {
+
+    
   return (
     <>
       <Header />
       <div className="header-overlay"></div>
+      <div className="sp">
+        <div className="navbar-box__local">
+                <a className="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <p>
+                        <FontAwesomeIcon icon={faMapMarkerAlt}></FontAwesomeIcon>
+                        Bạn đang xem giá, tồn kho tại: 
+                        <strong> Hồ Chí Minh</strong>
+                        <FontAwesomeIcon className="arrow" icon={faAngleDown}></FontAwesomeIcon>
+                    </p>
+                </a>
+        </div>
+      </div>
       <div className="container box-sliding">
         <div className="row">
           <div className="box-sliding__left pc">
@@ -541,20 +571,200 @@ export default function Home() {
                     <a>
                         <FontAwesomeIcon icon={faJournalWhills}></FontAwesomeIcon>
                         <span>Tin công Nghệ</span>
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <i className="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li className="menu-item">
                     <a>
                         <FontAwesomeIcon icon={faTag}></FontAwesomeIcon>
                         <span>Khuyến mại</span>
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <i className="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                 </li>
              </ul>
           </div>
-          <div className="box-sliding__center">
-              center
+          <div className="box-sliding__center shadow-sm">
+            {/* <div className="swiper-button-prev-custom">prev</div>
+            <div className="swiper-button-next-custom">next</div> */}
+            <Swiper
+                className="pc"
+                spaceBetween={100}
+                slidesPerView={1}
+                onSlideChange={(swiper) => console.log(swiper)}
+                // onSwiper={(swiper) => console.log(swiper)}
+                autoplay={{
+                    delay: 3000
+                }}
+                // pagination={{
+                //     clickable: true,
+                // }}
+                navigation={{
+                    clickable: true
+                }}
+                loop={true}
+            >
+                
+                <SwiperSlide>
+                    <a>
+                        <img className="pc" src="./img/carousel/Sliding-690x300-ktx_-3.png" />
+                        <img className="sp" src="./img/carousel/ktx_-1-Sliding-640x278.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img className="pc" src="./img/carousel/690x300_8_-a52.png" />
+                        <img className="sp" src="./img/carousel/640x278_5_-a52.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img className="pc" src="./img/carousel/Sliding-690x300-ip11.png" />
+                        <img className="sp" src="./img/carousel/Sliding-640x278-x60-pro.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img className="pc" src="./img/carousel/APPLE_WATCH_3.png" />
+                        <img className="sp" src="./img/carousel/APPLE_WATCH_3_1_.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img className="pc" src="./img/carousel/4i-Sliding-690x300.png" />
+                        <img className="sp" src="./img/carousel/4i-Sliding-640x278.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img className="pc" src="./img/carousel/VIETMAP_690x300.png" />
+                        <img className="sp" src="./img/carousel/VIETMAP_640x278.png" />
+                    </a>
+                </SwiperSlide>
+                {/* <SwiperSlide className="sp">
+                    <a>
+                        <img src="./img/carousel/640x27821p.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide className="sp">
+                    <a>
+                        <img src="./img/carousel/iphone_12__690x300.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide className="sp">
+                    <a>
+                        <img src="./img/carousel/Sliding-690x300_1.png" />
+                    </a>
+                </SwiperSlide> */}
+            </Swiper>
+            <Swiper
+                className="slider_menu pc"
+                spaceBetween={100}
+                slidesPerView={5}
+                onSlideChange={(swiper) => console.log(swiper)}
+                // onSwiper={(swiper) => console.log(swiper)}
+                autoplay={{
+                    delay: 3000
+                }}
+                // pagination={{
+                //     clickable: true,
+                // }}
+                // loop={true}
+                >
+                <SwiperSlide>
+                    MỪNG KHAI TRƯƠNG 
+                    <br/>
+                    Giảm sốc đến 50%
+                </SwiperSlide>
+                <SwiperSlide>
+                    GALAXY A52 | A72 
+                    <br/>
+                    Hotsale giá tốt
+                </SwiperSlide>
+                <SwiperSlide>
+                    VIVO X60 PRO 5G 
+                    <br/>
+                    Đặt trước giá cực sốc
+                </SwiperSlide>
+                <SwiperSlide>
+                    APPLE WATCH S3 
+                    <br/>
+                    Chỉ từ 5 triệu
+                </SwiperSlide>
+                <SwiperSlide>
+                    HUAWEI FREEBUDS 4I 
+                    <br/> 
+                    Mở bán nhiều ưu đãi
+                </SwiperSlide>
+                <SwiperSlide>
+                    CAMERA VIETMAP 
+                    <br/>
+                    Mở bán giá tốt
+                </SwiperSlide>
+            </Swiper>
+            <Swiper
+            className="sp slider-sp"
+                spaceBetween={100}
+                slidesPerView={1}
+                onSlideChange={(swiper) => console.log(swiper)}
+                // onSwiper={(swiper) => console.log(swiper)}
+                autoplay={{
+                    delay: 3000
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                // navigation={{
+                //     clickable: true
+                // }}
+                loop={true}
+            >
+                
+                <SwiperSlide>
+                    <a>
+                        <img src="./img/carousel/ktx_-1-Sliding-640x278.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img src="./img/carousel/640x278_5_-a52.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img src="./img/carousel/Sliding-640x278-x60-pro.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img src="./img/carousel/APPLE_WATCH_3_1_.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img src="./img/carousel/4i-Sliding-640x278.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img src="./img/carousel/VIETMAP_640x278.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <a>
+                        <img src="./img/carousel/640x27821p.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide className="sp">
+                    <a>
+                        <img src="./img/carousel/690x300_-_Rightbanner_iPhone12_2_.png" />
+                    </a>
+                </SwiperSlide>
+                <SwiperSlide className="sp">
+                    <a>
+                        <img src="./img/carousel/Sliding-690x300_1.png" />
+                    </a>
+                </SwiperSlide>
+            </Swiper>
           </div>
           <div className="box-sliding__right pc">
             <div className="right__box-img">
@@ -574,6 +784,108 @@ export default function Home() {
               <img className="pc" src="./img/MFF-1200x75_3_.png" />
               <img className="sp" src="./img/MFF-800x150_3_.png" />
           </a>
+      </div>
+      <div className="box-menu sp">
+          <div className="shadow-sm box-menu__list-menu">
+            <ul className="list-menu">
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faMobileAlt}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Điện Thoại</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faLaptop}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Laptop</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faTabletAlt}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Tablet</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faMusic}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Âm Thanh</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faClock}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Đồng Hồ</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Nhà Thông Minh</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faCodeBranch}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Phụ Kiện</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faMoneyBillWave}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Thu Cũ</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faCircleNotch}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Hàng Cũ</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faSimCard}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Sim Thẻ</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faJournalWhills}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Tin Công Nghệ</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div className="box-icon">
+                            <FontAwesomeIcon icon={faTag}></FontAwesomeIcon>
+                        </div>
+                        <div className="box-name">Khuyến Mại</div>
+                    </a>
+                </li>
+            </ul>
+          </div>
       </div>
     </>
   )

@@ -9,10 +9,37 @@
     width: 100%;
     top: 0;
     left: 0;
+    @media screen and (max-width: 768px) {
+        height: auto;
+        justify-content: space-around;
+        &-content {
+            .navbar-header {
+                order: 1;
+                width: 100%;
+                a {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            .box-main__box-about {
+                order: 2;
+                width: 50px !important;
+            }
+            .box-main__form-search {
+                order: 3;
+                width: 100%;
+                margin: 5px 5px 10px 0;
+            }
+        }
+    }
     &-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media screen and (max-width: 768px) {
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
         .box-main__box-about {
             display: flex;
             align-items: center;
@@ -35,7 +62,7 @@
             min-width: 110px;
             max-width: 150px;
             height: 38px;
-            display: flex!important;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 0 5px;
@@ -43,6 +70,15 @@
             background: rgba(255,255,255,.3);
             color: #fff;
             cursor: pointer;
+            margin-right: 15px;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            .dropdown-flex {
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
             .dropdown-toggle {
                 p:nth-child(1) {
                     font-size: 10px;
@@ -52,6 +88,7 @@
                 }
             }
             .dropdown-menu {
+                visibility: hidden;
                 padding: 0;
                 border: 0;
                 overflow: hidden;
@@ -91,12 +128,15 @@
                 z-index: 2;
                 position: relative;
                 border-collapse: separate;
+                @media screen and (max-width: 768px) {
+                    width: auto;
+                }
                 .form-control {
                     height: 38px;
                     position: relative;
                     z-index: 2;
                     float: left;
-                    width: 100%;
+                    width: 90%;
                     margin-bottom: 0;
                     padding: 6px 12px;
                     font-size: 14px;
@@ -136,6 +176,29 @@
                             height: 20px;
                         }
                     }
+                }
+            }
+        }
+        .box-main__box-about {
+            width: 424px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .box-about {
+                display: flex;
+                align-items: center;
+                .about__box-icon {
+                    display: flex;
+                    justify-content: center;
+                    margin-right: 10px;
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                .about__box-content {
+                    display: flex;
+                    flex-direction: column;
                 }
             }
         }

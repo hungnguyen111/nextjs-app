@@ -32,15 +32,15 @@ p {
   margin: 0 auto;
 }
 .sp {
-  display: none;
+  display: none !important;
   @media screen and (max-width: 768px) {
-    display: block;
+    display: block !important;
   }
 }
 .pc {
-  display: none;
+  display: none !important;
   @media screen and (min-width: 769px) {
-    display: block;
+    display: block !important;
   }
 }
 .row {
