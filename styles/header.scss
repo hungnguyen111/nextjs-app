@@ -41,6 +41,7 @@
             margin-top: 5px;
         }
         .box-main__box-about {
+            cursor: pointer;
             display: flex;
             align-items: center;
             .box-about {
@@ -88,7 +89,7 @@
                 }
             }
             .dropdown-menu {
-                visibility: hidden;
+                // display: none;
                 padding: 0;
                 border: 0;
                 overflow: hidden;
@@ -104,6 +105,9 @@
                 background-color: #fff;
                 border-radius: 4px;
                 box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+                visibility: hidden;
+                opacity: 0;
+                transition: all 0.3s;
                 &>li>a {
                     color:   #333;
                     display: block;
@@ -214,4 +218,12 @@
             }
         }
     }
+}
+#nav-mobile {
+    @media screen and (min-width: 769px) {
+        display: none;
+    }
+}
+#nav-mobile-close {
+    display: none;
 }
