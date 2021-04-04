@@ -11,8 +11,46 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import $ from 'jquery';
 
+//redux
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../store/actions';
+
 export default function Header(props) {
-    
+    const dispatch = useDispatch();
+    const flag = useSelector(store => store.pageReducer.flag);
+
+    const handleLocationPc = () => {
+        dispatch(actions.changeFlag());
+        if (process.browser) {
+            if (!flag) {
+                $('#header-overlay').css('opacity', '0');
+                $('#header-overlay').css('visibility', 'hidden');
+                $('.dropdown-menu').css('opacity', '0');
+                $('.dropdown-menu').css('visibility', 'hidden');
+            } else {
+                $('#header-overlay').css('opacity', '1');
+                $('#header-overlay').css('visibility', 'unset');
+                $('.dropdown-menu').css('opacity', '1');
+                $('.dropdown-menu').css('visibility', 'unset');
+            }
+        }
+    }
+    if (process.browser) {
+        $('.box-main__box-about, .header-overlay, .navbar-header, .box-sliding, .banner, .box-menu').on('click', () => {
+            $('#header-overlay').css('opacity', '0');
+            $('#header-overlay').css('visibility', 'hidden');
+            $('#search-input').css('background', '#fff');
+            if (!flag) {
+                $('#header-overlay').css('opacity', '0');
+                $('#header-overlay').css('visibility', 'hidden');
+                $('#dropdown-menu').css('opacity', '0');
+                $('#dropdown-menu').css('visibility', 'hidden');
+                $('.dropdown-menu').css('opacity', '0');
+                $('.dropdown-menu').css('visibility', 'hidden');
+            }
+        })
+    }
+
     return (
         <header className="header">
             <div className="header-content container">
@@ -28,7 +66,7 @@ export default function Header(props) {
                         <FontAwesomeIcon className="sp" icon={faShoppingBag}></FontAwesomeIcon>
                     </a>
                 </div>
-                <div id="dropdown" className="box-main__box-local dropdown pc">
+                <div id="dropdown" onClick={handleLocationPc} className="box-main__box-local dropdown pc">
                     <div className="dropdown-flex">
                         <a id="dropdown-toggle" className="dropdown-toggle">
                             <div>
@@ -102,8 +140,6 @@ export default function Header(props) {
 
 function handleEventClick () {
     if (process.browser) {
-        let flag2 = false;
-        localStorage.setItem('flag2', false);
         $("#search").on('click', () => {
             $('#header-overlay').css('opacity', '1');
             $('#header-overlay').css('visibility', 'unset');
@@ -112,81 +148,21 @@ function handleEventClick () {
             $('.dropdown-menu').css('opacity', '0');
             $('.dropdown-menu').css('visibility', 'hidden');
         })
-        $('.box-main__box-about, .header-overlay, .navbar-header, .box-sliding, .banner, .box-menu').on('click', () => {
-            localStorage.setItem('flag', false)
-            let _flag = localStorage.getItem('flag');
-            
-            $('#header-overlay').css('opacity', '0');
-            $('#header-overlay').css('visibility', 'hidden');
-            $('#search-input').css('background', '#fff');
-            // $('.dropdown-menu').css('display', 'none');
-            // $('#header-overlay').css('display', 'none');
-            // $('#header-overlay').toggle();
-            // console.log(props);
-
-            
-            if (_flag === 'false') {
-                $('#header-overlay').css('opacity', '0');
-                $('#header-overlay').css('visibility', 'hidden');
-                $('#dropdown-menu').css('opacity', '0');
-                $('#dropdown-menu').css('visibility', 'hidden');
-                $('.dropdown-menu').css('opacity', '0');
-                $('.dropdown-menu').css('visibility', 'hidden');
-            }
-        })
         $('#search-button').on('click', () => {
-            console.log('fsdf');
             $('#search-input').css('background', '#faebe7');
         })
-        $('#dropdown-toggle').on('click', () => {
-            // $('.dropdown-menu').toggle();
-            
-            // $('#header-overlay').css('opacity', '1');
-            // $('#header-overlay').css('visibility', 'unset');
-            // $('#header-overlay').toggle();
-        })
-
-        //Button Navbar menu mobile
         $('#nav-mobile').on('click', () => {
-            // $('#box-menu__click').toggle();
             $('#nav-mobile-close').css('display', 'block');
             $('#nav-mobile').css('display', 'none');
             $('#box-menu__click').toggleClass('active');
 
         })
         $('#nav-mobile-close').on('click', () => {
-            // $('#box-menu__click').css('display', 'none');
             $('#nav-mobile').css('display', 'block');
             $('#nav-mobile-close').css('display', 'none');
             $('#box-menu__click').toggleClass('active');
 
         })
-
-        //Button location pc
-        $('#dropdown').on('click', () => {
-            flag2 = !flag2;
-            localStorage.setItem('flag2', flag2);
-            // localStorage.setItem('flag', false);
-            // let _flag = localStorage.getItem('flag');
-            // $('#header-overlay').css('opacity', '1');
-            // $('#header-overlay').css('visibility', 'unset');
-            // $('.dropdown-menu').css('opacity', '1');
-            // $('.dropdown-menu').css('visibility', 'unset');
-            if (!flag2) {
-                $('#header-overlay').css('opacity', '0');
-                $('#header-overlay').css('visibility', 'hidden');
-                $('.dropdown-menu').css('opacity', '0');
-                $('.dropdown-menu').css('visibility', 'hidden');
-            } else {
-                $('#header-overlay').css('opacity', '1');
-                $('#header-overlay').css('visibility', 'unset');
-                $('.dropdown-menu').css('opacity', '1');
-                $('.dropdown-menu').css('visibility', 'unset');
-            }
-        })
-        
-
     }
 }
-
 handleEventClick();
